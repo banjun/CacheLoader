@@ -8,7 +8,7 @@ public final class Loader<Value>: Sendable {
     private let callerFile: String
     private let callerLine: Int
     private func debugLog(function: String = #function, _ message: String) {
-        CacheLoader.debugLog(callerFile: callerFile, callerLine: callerLine, message: message)
+        CacheLoader.debugLog(function: function, callerFile: callerFile, callerLine: callerLine, message: message)
     }
 
     public init(queueLabel: String? = nil, callerFile: String = #file, callerLine: Int = #line, _ load: @escaping @Sendable () async throws -> (Value)) {
